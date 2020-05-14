@@ -1,0 +1,30 @@
+class Solution {
+    public static int isHappyNumber(int num)
+    {
+         int rem=0, sum=0;   
+        while(num>0)
+        {
+            rem=num%10;
+            sum+=rem*rem;
+            num=num/10;
+        }
+    
+       return sum;
+    }
+    public boolean isHappy(int n) {
+       boolean r =false;
+       int sum=n;
+       while(sum!=1 && sum!=4)
+       {
+           sum=isHappyNumber(sum);
+       }
+        
+       if(sum==1)
+       {
+           r=true;
+       }
+        
+        
+        return r;
+    }
+}
